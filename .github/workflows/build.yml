@@ -32,8 +32,20 @@ jobs:
           chmod +x gradlew
           ./gradlew assembleRelease --no-daemon --stacktrace
 
-      - name: Upload APK
-        uses: actions/upload-artifact@v4
+      - name: Rename APK
+        run: |
+          cd app/build/outputs/apk/release/
+          for f in *.apk; do mv "$f" "termux-st_v77.19_${{ github.run_number }}.apk"; done
+
+      - name: Release
+        uses: softprops/action-gh-release@v2
         with:
-          name: termux-release
-          path: app/build/outputs/apk/release/*.apk
+          tag_name: v77.19-run${{ github.run_number }}
+          name: v77.19 (build ${{ github.run_number }})
+          files: app/build/outputs/apk/release/*.apk
+          body: |
+            云端自动构建
+            - versionCode 131 / versionName 0.118.0
+            - 纯净壳 + 内置浏览器 + 选择存储
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
