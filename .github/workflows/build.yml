@@ -41,7 +41,7 @@ jobs:
           for f in *.apk; do mv "$f" "termux-st_v1.0.0_${{ github.run_number }}.apk"; done
 
       - name: Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           tag_name: v1.0.0-run${{ github.run_number }}
           name: v1.0.0 (build ${{ github.run_number }})
