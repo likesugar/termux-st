@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="tavern_primary">#4FC3F7</color>
+    <color name="tavern_on_primary">#00323F</color>
+    <color name="tavern_on_surface_variant">#9BC8DE</color>
+    <color name="tavern_background">#000000</color>
+</resources>
