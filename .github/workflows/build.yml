@@ -19,7 +19,7 @@ jobs:
           java-version: '17'
 
       - name: Set up Android SDK + NDK
-        uses: android-actions/setup-android@v3
+        uses: android-actions/setup-android@v4
         with:
           packages: 'ndk;27.2.12479018'
 
