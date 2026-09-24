@@ -1,6 +1,6 @@
 # Termux 精简版（termux-st）
 
-基于 [termux/termux-app](https://github.com/termux-app) 官方源码深度定制的纯净壳版本，首个发布版本 **v77.19**（versionCode 131 / versionName 0.118.0）。
+基于 [termux/termux-app](https://github.com/termux-app) 官方源码深度定制的纯净壳版本，首个发布版本 **v1.0.0**（versionCode 131 / versionName 1.0.0）。
 
 ## 下载
 
@@ -42,4 +42,4 @@ APK 在本仓库的 [Releases](https://github.com/likesugar/termux-st/releases) 
 
 ## 版本
 
-- **v77.19**（2026-09-24）：首个发布版本。包含 v77.12 基线（cc/ST 按钮、WebView 优化）+ 媒体自动播放、渲染优先级、返回键 goBack/finish、HTML5 全屏、抽屉"选择存储"按钮。
+- **v1.0.0**（2026-09-24，内部代号 v77.19）：首个发布版本。包含 v77.12 基线（cc/ST 按钮、WebView 优化）+ 媒体自动播放、渲染优先级、返回键 goBack/finish、HTML5 全屏、抽屉"选择存储"按钮。

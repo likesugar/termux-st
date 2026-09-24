@@ -30,6 +30,7 @@ jobs:
           TERMUX_LOCAL_BOOTSTRAP: 1
           ANDROID_HOME: /usr/local/lib/android/sdk
           JITPACK_NDK_VERSION: 27.2.12479018
+          TERMUX_APP_VERSION_NAME: 1.0.0
         run: |
           chmod +x gradlew
           ./gradlew assembleRelease --no-daemon --stacktrace
@@ -37,17 +38,17 @@ jobs:
       - name: Rename APK
         run: |
           cd app/build/outputs/apk/release/
-          for f in *.apk; do mv "$f" "termux-st_v77.19_${{ github.run_number }}.apk"; done
+          for f in *.apk; do mv "$f" "termux-st_v1.0.0_${{ github.run_number }}.apk"; done
 
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v77.19-run${{ github.run_number }}
-          name: v77.19 (build ${{ github.run_number }})
+          tag_name: v1.0.0-run${{ github.run_number }}
+          name: v1.0.0 (build ${{ github.run_number }})
           files: app/build/outputs/apk/release/*.apk
           body: |
             云端自动构建
-            - versionCode 131 / versionName 0.118.0
+            - versionCode 131 / versionName 1.0.0
             - 纯净壳 + 内置浏览器 + 选择存储
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
